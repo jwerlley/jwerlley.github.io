@@ -15,6 +15,13 @@
       "sizes": "192x192"
     }
   ],
+  "splash_screens": [{
+    "src": "splash/lowres",
+    "sizes": "320x240"
+  }, {
+    "src": "splash/hd_small",
+    "sizes": "1334x750"
+  }],
   "start_url": "index.html?launcher=true",
   "background_color": "blue"
 }
