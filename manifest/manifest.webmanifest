@@ -26,11 +26,6 @@
       "src": "icons/launcher-icon-512px.png",
       "sizes": "512x512",
       "type": "image/png"
-    },
-    {
-      "src": "splash/hd_small.png",
-      "sizes": "1334x750",
-      "type": "image/png"
     }
   ],
   "background_color": "#FFFFFF",
