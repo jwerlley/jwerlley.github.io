@@ -1,7 +1,7 @@
 {
   "short_name": "Credishop",
-  "name": "Credishop S/A",
-  "icons": [
+    "name": "Credishop S/A",
+    "icons": [
     {
       "src": "icons/launcher-icon-1x.png",
       "sizes": "48x48",
@@ -28,6 +28,10 @@
       "type": "image/png"
     }
   ],
+  splash_screens": [{
+    "src": "splash/hd_small.png",
+     "sizes": "1334x750"
+  }],
   "background_color": "#FFFFFF",
   "theme_color": "#ED1C24",
   "start_url": "index.html?launcher=true"
