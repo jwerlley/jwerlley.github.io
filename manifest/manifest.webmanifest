@@ -26,12 +26,13 @@
       "src": "icons/launcher-icon-512px.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "splash/hd_small.png",
+      "sizes": "1334x750",
+      "type": "image/png"
     }
   ],
-  splash_screens": [{
-    "src": "splash/hd_small.png",
-     "sizes": "1334x750"
-  }],
   "background_color": "#FFFFFF",
   "theme_color": "#ED1C24",
   "start_url": "index.html?launcher=true"
