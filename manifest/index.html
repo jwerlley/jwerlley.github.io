@@ -2,32 +2,39 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Credishop</title>
+    <title>ACME</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="icon" sizes="192x192" href="icons/launcher-icon-4x.png">
 
     <!-- Web Application Manifest -->
     <link rel="manifest" href="manifest.webmanifest">
-    <meta name="application-name" content="Credishop">
+    <meta name="application-name" content="ACME">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta content='yes' name='mobile-web-app-capable'/>
     <meta content='#034694' name='theme-color'/>
 
     <!-- Add to homescreen for Safari on iOS -->
-    <meta content='yes' name='apple-mobile-web-app-capable'/>
-    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
-    <meta content='Credishop' name='apple-mobile-web-app-title'/>
-    <meta content='#034694' name='apple-mobile-web-app-status-bar-style'/>
+    <meta name='apple-mobile-web-app-title' content='Credishop'/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name='apple-mobile-web-app-status-bar-style' content='#034694'/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-startup-image" href="/splash-startup.png">
 
     <link rel="apple-touch-icon" href="icons/launcher-icon-4x.png" />
     <link rel="apple-touch-icon-precomposed" href="icons/launcher-icon-4x.png" />
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta content='#034694' name='msapplication-TileColor'/>
-    <meta content='#034694' name='msapplication-navbutton-color'/>
+    <meta name='msapplication-TileColor' content='#034694'/>
+    <meta name='msapplication-navbutton-color'content='#034694' />
+    <meta name="application-name" content="my app"/>
+    <meta name="msapplication-TileColor" content="#000000"/>
+    <meta name="msapplication-square70x70logo" content="tiny.png"/>
+    <meta name="msapplication-square150x150logo" content="square.png"/>
+    <meta name="msapplication-wide310x150logo" content="wide.png"/>
+    <meta name="msapplication-square310x310logo" content="large.png"/>
 
     <link rel="stylesheet" href="css/ratchet.min.css">
     <link rel="stylesheet" href="css/app.css">
@@ -36,157 +43,14 @@
   <body>
     <header class="bar bar-nav">
       <a class="icon icon-gear pull-right" href="#settingsModal"></a>
-      <h1 class="title">Movie finder</h1>
+      <h1 class="title">ACME</h1>
     </header>
 
-    <div class="bar bar-standard bar-header-secondary">
-      <form>
-        <input type="search" placeholder="Search">
-      </form>
-    </div>
+    <form>
+      <input type="text" placeholder="Número do cartão">
+      <input type="text" placeholder="Senha">
+      <button class="btn btn-positive btn-block">Entrar</button>
+    </form>
 
-    <div class="content">
-      <div class="slider">
-
-        <div class="slide-group">
-          <div class="slide">
-            <img src="img/argo.png" alt="Argo" width="640" height="300">
-          </div>
-          <div class="slide">
-             <img src="img/skyfall.png" alt="Skyfall" width="640" height="300">
-          </div>
-          <div class="slide">
-             <img src="img/ralph.png" alt="Wreck-It Ralph" width="640" height="300">
-          </div>
-        </div>
-      </div>
-
-      <ul class="table-view">
-        <li class="table-view-cell table-view-divider">Recommended movies</li>
-        <li class="table-view-cell media">
-          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
-            <div class="media-body">
-              Argo
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media">
-          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
-            <div class="media-body">
-              Skyfall: 007
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media">
-          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
-            <div class="media-body">
-              Wreck-it Ralph
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media">
-          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
-            <div class="media-body">
-              Argo
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media">
-          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
-            <div class="media-body">
-              Skyfall: 007
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media">
-          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
-            <div class="media-body">
-              Wreck-it Ralph
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media">
-          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
-            <div class="media-body">
-              Argo
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media">
-          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
-            <div class="media-body">
-              Skyfall: 007
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media">
-          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
-            <div class="media-body">
-              Wreck-it Ralph
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div><!-- /.content -->
-
-    <!-- Settings modal -->
-    <div id="settingsModal" class="modal">
-      <header class="bar bar-nav">
-        <a class="icon icon-close pull-right" href="#settingsModal"></a>
-        <h1 class="title">Settings</h1>
-      </header>
-
-      <div class="content">
-        <form class="input-group">
-          <input type="text" placeholder="Full name">
-          <input type="email" placeholder="Email">
-          <input type="text" placeholder="Username">
-        </form>
-
-        <h5 class="content-padded">App settings</h5>
-
-        <ul class="table-view">
-          <li class="table-view-cell media">
-            <span class="media-object pull-left icon icon-sound"></span>
-            <div class="media-body">
-              Enable sounds
-            </div>
-            <div class="toggle">
-              <div class="toggle-handle"></div>
-            </div>
-          </li>
-          <li class="table-view-cell media">
-            <span class="media-object pull-left icon icon-person"></span>
-            <div class="media-body">
-              Parental controls
-            </div>
-            <div class="toggle">
-              <div class="toggle-handle"></div>
-            </div>
-          </li>
-        </ul>
-        <div class="content-padded">
-          <button class="btn btn-positive btn-block">Save settings</button>
-        </div>
-      </div>
-    </div><!-- /.modal -->
   </body>
 </html>
