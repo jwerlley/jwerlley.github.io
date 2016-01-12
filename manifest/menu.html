@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>ACME</title>
+    <title>acme</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <link rel="icon" sizes="192x192" href="icons/launcher-icon-4x.png">
 
-    <!-- Web Application Manifest -->
+    <!-- web application manifest -->
     <link rel="manifest" href="manifest.webmanifest">
-    <meta name="application-name" content="ACME">
+    <meta name="application-name" content="acme">
 
-    <!-- Add to homescreen for Chrome on Android -->
+    <!-- add to homescreen for chrome on android -->
     <meta content='yes' name='mobile-web-app-capable'/>
     <meta content='#034694' name='theme-color'/>
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name='apple-mobile-web-app-title' content='ACME'/>
+    <!-- add to homescreen for safari on ios -->
+    <meta name='apple-mobile-web-app-title' content='acme'/>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name='apple-mobile-web-app-status-bar-style' content='#034694'/>
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -26,11 +26,11 @@
     <link rel="apple-touch-icon" href="icons/launcher-icon-4x.png" />
     <link rel="apple-touch-icon-precomposed" href="icons/launcher-icon-4x.png" />
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name='msapplication-TileColor' content='#034694'/>
+    <!-- tile icon for win8 (144x144 + tile color) -->
+    <meta name='msapplication-tilecolor' content='#034694'/>
     <meta name='msapplication-navbutton-color'content='#034694'/>
     <meta name="application-name" content="my app"/>
-    <meta name="msapplication-TileColor" content="#000000"/>
+    <meta name="msapplication-tilecolor" content="#000000"/>
     <meta name="msapplication-square70x70logo" content="tiny.png"/>
     <meta name="msapplication-square150x150logo" content="square.png"/>
     <meta name="msapplication-wide310x150logo" content="wide.png"/>
@@ -42,45 +42,58 @@
   </head>
   <body>
     <header class="bar bar-nav">
-      <h1 class="title">Menu</h1>
+      <h1 class="title">menu</h1>
       <a class="pull-right icon icon-close"></a>
     </header>
 
     <div class="content ">
       <center>
-        <img src="icons/acme.jpg" alt="ACME" height="150" width="150">
+        <img src="icons/acme.jpg" alt="acme" height="150" width="150">
       </center>
 
       <ul class="table-view">
         <li class="table-view-cell media">
           <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="icons/saldo.png" alt="Placeholder image for Argo's poster">
+            <img class="media-object pull-left" src="icons/saldo.png" alt="placeholder image for argo's poster">
             <div class="media-body">
               Saldos/Limites
+              <p> Consulte o saldo disponível e o limite do cartão.</p>
             </div>
           </a>
         </li>
         <li class="table-view-cell ">
           <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="icons/extrato.png" alt="Placeholder image for Argo's poster">
+            <img class="media-object pull-left" src="icons/extrato.png" alt="placeholder image for argo's poster">
             <div class="media-body">
-            Extrato/Boleto
+              Extrato/Boleto
+              <p> Consulte a movimentação ou gerar o boleto de pagamento.</p>
             </div>
           </a>
         </li>
         <li class="table-view-cell media">
           <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="icons/cartao2.png" alt="Placeholder image for Argo's poster">
+            <img class="media-object pull-left" src="icons/cartao2.png" alt="placeholder image for argo's poster">
             <div class="media-body">
               2° Via de cartão
+              <p> Se o seu cartão está desmagnetizado, quebrado ou danificado, solicite uma 2ª via. O novo cartão poderá ser entregue no seu endereço de correspondência ou na loja da Credi-Shop, no Teresina Shopping.</p>
             </div>
           </a>
         </li>
         <li class="table-view-cell media">
           <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-            <img class="media-object pull-left" src="icons/adicional2.png" alt="Placeholder image for Argo's poster">
+            <img class="media-object pull-left" src="icons/adicional2.png" alt="placeholder image for argo's poster">
             <div class="media-body">
               Solicito cartão adicional
+              <p> A pessoa indicada como adicional deve ter pelo menos 16 anos de idade e possuir CPF. É importante ressaltar que a quantidade de cartões adicionais a que você tem direito é vinculada ao seu limite de compras.</p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="icons/adicional2.png" alt="placeholder image for argo's poster">
+            <div class="media-body">
+              Bloqueio/Desbloqueio de cartão
+              <p> Para sua maior segurança, você recebe o seu cartão bloqueado. Antes de utilizá-lo pela primeira vez, solicite o desbloqueio.</p>
             </div>
           </a>
         </li>
