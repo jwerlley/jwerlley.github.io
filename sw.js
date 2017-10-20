@@ -1,3 +1,88 @@
-var __wpo = {"assets":{"main":["/app.6b68745e.js","/vendor.6b68745e.js","/app.c0612.css","/","/asset-manifest.json","/manifest.json","/img/android-chrome-144x144.png","/img/android-chrome-192x192.png","/img/apple-touch-icon-120x120.png","/img/apple-touch-icon-152x152.png","/img/favicon.png","/img/splashscreen-icon-512x512.png","/img/splashscreen-icon-384x384.png","/img/logo.png"],"additional":[],"optional":[]},"externals":[],"hashesMap":{"dc2c47d5987acdce6f98ae88641970ecfcfec5d4":"/app.6b68745e.js","e9b2c1ec2a0e06f93e23c4b81db539747bb46694":"/vendor.6b68745e.js","ca96c683c3d718f5dea33f50c1e1921137287ae6":"/app.c0612.css","9e2ca18c2be9c093b32280ae904dc9ea0d087843":"/","f4f57899575b35a33e0ced960cb6b8a1d79b3ab2":"/asset-manifest.json","223a7fd80d061f9d7143d7e3e7536bf6c2ece0c0":"/manifest.json","34b2c44d5c02cc6752e91b62a7457b0e47b66412":"/img/android-chrome-144x144.png","b9ffd1773d25e5ab5da89c68f59d94e398ea56bd":"/img/android-chrome-192x192.png","e8e39f7e33f7ab17d19daea10c4402d73e9cf8ec":"/img/apple-touch-icon-120x120.png","c51268f8a9f86b04cbc579383b673d36daee4388":"/img/apple-touch-icon-152x152.png","ac2891698b4bead23949edd9fecf66f766c57c68":"/img/favicon.png","13189d865df84fffbb3cb707de36fe90f29d1ecc":"/img/splashscreen-icon-512x512.png","f0b3c474d3e87635965a72cf1414af82628630fe":"/img/splashscreen-icon-384x384.png"},"navigateFallbackURL":"/offline.html","navigateFallbackForRedirects":true,"strategy":"all","responseStrategy":"cache-first","version":"2017-10-19 21:11:08","name":"webpack-offline","pluginVersion":"4.8.4","relativePaths":false};
+//importScripts('https://cdn.onesignal.com/sdks/OneSignalSDK.js');
+// Incrementing CACHE_VERSION will kick off the install event and force previously cached
+// resources to be cached again.
+const CACHE_VERSION = 1;
+let CURRENT_CACHES = {
+  offline: 'offline-v' + CACHE_VERSION
+};
+const OFFLINE_URL = 'offline.html';
 
-!function(e){function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}var t={};n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:r})},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},n.p="/",n(n.s=0)}([function(e,n,t){"use strict";function r(e,n){return caches.match(e,{cacheName:n}).then(function(t){return a()?t:c(t).then(function(t){return caches.open(n).then(function(n){return n.put(e,t)}).then(function(){return t})})}).catch(function(){})}function o(e,n){return e+(-1!==e.indexOf("?")?"&":"?")+"__uncache="+encodeURIComponent(n)}function i(e){return"navigate"===e.mode||e.headers.get("Upgrade-Insecure-Requests")||-1!==(e.headers.get("Accept")||"").indexOf("text/html")}function a(e){return!e||!e.redirected||!e.ok||"opaqueredirect"===e.type}function c(e){return a(e)?Promise.resolve(e):("body"in e?Promise.resolve(e.body):e.blob()).then(function(n){return new Response(n,{headers:e.headers,status:e.status})})}function s(e){return Object.keys(e).reduce(function(n,t){return n[t]=e[t],n},{})}function u(e,n){console.groupCollapsed("[SW]:",e),n.forEach(function(e){console.log("Asset:",e)}),console.groupEnd()}if(function(){var e=ExtendableEvent.prototype.waitUntil,n=FetchEvent.prototype.respondWith,t=new WeakMap;ExtendableEvent.prototype.waitUntil=function(n){var r=this,o=t.get(r);return o?void o.push(Promise.resolve(n)):(o=[Promise.resolve(n)],t.set(r,o),e.call(r,Promise.resolve().then(function e(){var n=o.length;return Promise.all(o.map(function(e){return e.catch(function(){})})).then(function(){return o.length!=n?e():(t.delete(r),Promise.all(o))})})))},FetchEvent.prototype.respondWith=function(e){return this.waitUntil(e),n.call(this,e)}}(),void 0===f)var f=!1;!function(e,n){function t(){if(!R.additional.length)return Promise.resolve();f&&console.log("[SW]:","Caching additional");var e=void 0;return e="changed"===b?l("additional"):a("additional"),e.catch(function(e){console.error("[SW]:","Cache section `additional` failed to load")})}function a(n){var t=R[n];return caches.open(E).then(function(n){return w(n,t,{bust:e.version,request:e.prefetchRequest})}).then(function(){u("Cached assets: "+n,t)}).catch(function(e){throw console.error(e),e})}function l(n){return d().then(function(t){if(!t)return a(n);var r=t[0],o=t[1],i=t[2],c=i.hashmap,s=i.version;if(!i.hashmap||s===e.version)return a(n);var f=Object.keys(c).map(function(e){return c[e]}),l=o.map(function(e){var n=new URL(e.url);return n.search="",n.hash="",n.toString()}),h=R[n],d=[],p=h.filter(function(e){return-1===l.indexOf(e)||-1===f.indexOf(e)});Object.keys(W).forEach(function(e){var n=W[e];if(-1!==h.indexOf(n)&&-1===p.indexOf(n)&&-1===d.indexOf(n)){var t=c[e];t&&-1!==l.indexOf(t)?d.push([t,n]):p.push(n)}}),u("Changed assets: "+n,p),u("Moved assets: "+n,d);var v=Promise.all(d.map(function(e){return r.match(e[0]).then(function(n){return[e[1],n]})}));return caches.open(E).then(function(n){var t=v.then(function(e){return Promise.all(e.map(function(e){return n.put(e[0],e[1])}))});return Promise.all([t,w(n,p,{bust:e.version,request:e.prefetchRequest})])})})}function h(){return caches.keys().then(function(e){var n=e.map(function(e){if(0===e.indexOf(P)&&0!==e.indexOf(E))return console.log("[SW]:","Delete cache:",e),caches.delete(e)});return Promise.all(n)})}function d(){return caches.keys().then(function(e){for(var n=e.length,t=void 0;n--&&(t=e[n],0!==t.indexOf(P)););if(t){var r=void 0;return caches.open(t).then(function(e){return r=e,e.match(new URL(j,location).toString())}).then(function(e){if(e)return Promise.all([r,r.keys(),e.json()])})}})}function p(){return caches.open(E).then(function(n){var t=new Response(JSON.stringify({version:e.version,hashmap:W}));return n.put(new URL(j,location).toString(),t)})}function v(e,n,t){return r(t,E).then(function(r){return r?(f&&console.log("[SW]:","URL ["+t+"]("+n+") from cache"),r):fetch(e.request).then(function(r){return r.ok?(f&&console.log("[SW]:","URL ["+n+"] from network"),t===n&&function(){var t=r.clone(),o=caches.open(E).then(function(e){return e.put(n,t)}).then(function(){console.log("[SW]:","Cache asset: "+n)});e.waitUntil(o)}(),r):(f&&console.log("[SW]:","URL ["+n+"] wrong response: ["+r.status+"] "+r.type),r)})})}function g(e,n,t){return fetch(e.request).then(function(e){if(e.ok)return f&&console.log("[SW]:","URL ["+n+"] from network"),e;throw new Error("Response is not ok")}).catch(function(){return f&&console.log("[SW]:","URL ["+n+"] from cache if possible"),r(t,E)})}function m(e){return e.catch(function(){}).then(function(e){var n=e&&e.ok,t=e&&"opaqueredirect"===e.type;return n||t&&!F?e:(f&&console.log("[SW]:","Loading navigation fallback ["+C+"] from cache"),r(C,E))})}function w(e,n,t){var r=!1!==t.allowLoaders,i=t&&t.bust,a=t.request||{credentials:"omit",mode:"cors"};return Promise.all(n.map(function(e){return i&&(e=o(e,i)),fetch(e,a).then(c)})).then(function(o){if(o.some(function(e){return!e.ok}))return Promise.reject(new Error("Wrong response status"));var i=[],a=o.map(function(t,o){return r&&i.push(y(n[o],t)),e.put(n[o],t)});return i.length?function(){var r=s(t);r.allowLoaders=!1;var o=a;a=Promise.all(i).then(function(t){var i=[].concat.apply([],t);return n.length&&(o=o.concat(w(e,i,r))),Promise.all(o)})}():a=Promise.all(a),a})}function y(e,n){var t=Object.keys(U).map(function(t){if(-1!==U[t].indexOf(e)&&O[t])return O[t](n.clone())}).filter(function(e){return!!e});return Promise.all(t).then(function(e){return[].concat.apply([],e)})}function x(e){var n=e.url,t=new URL(n),r=void 0;r="navigate"===e.mode?"navigate":t.origin===location.origin?"same-origin":"cross-origin";for(var o=0;o<k.length;o++){var i=k[o];if(i&&(!i.requestTypes||-1!==i.requestTypes.indexOf(r))){var a=void 0;if((a="function"==typeof i.match?i.match(t,e):n.replace(i.match,i.to))&&a!==n)return a}}}var O=n.loaders,k=n.cacheMaps,b=e.strategy,S=e.responseStrategy,R=e.assets,U=e.loaders||{},W=e.hashesMap,L=e.externals,P=e.name,q=e.version,E=P+":"+q,j="__offline_webpack__data";!function(){Object.keys(R).forEach(function(e){R[e]=R[e].map(function(e){var n=new URL(e,location);return n.hash="",-1===L.indexOf(e)&&(n.search=""),n.toString()})}),Object.keys(U).forEach(function(e){U[e]=U[e].map(function(e){var n=new URL(e,location);return n.hash="",-1===L.indexOf(e)&&(n.search=""),n.toString()})}),W=Object.keys(W).reduce(function(e,n){var t=new URL(W[n],location);return t.search="",t.hash="",e[n]=t.toString(),e},{}),L=L.map(function(e){var n=new URL(e,location);return n.hash="",n.toString()})}();var _=[].concat(R.main,R.additional,R.optional),C=e.navigateFallbackURL,F=e.navigateFallbackForRedirects;self.addEventListener("install",function(e){console.log("[SW]:","Install event");var n=void 0;n="changed"===b?l("main"):a("main"),e.waitUntil(n)}),self.addEventListener("activate",function(e){console.log("[SW]:","Activate event");var n=t();n=n.then(p),n=n.then(h),n=n.then(function(){if(self.clients&&self.clients.claim)return self.clients.claim()}),e.waitUntil(n)}),self.addEventListener("fetch",function(e){var n=new URL(e.request.url);n.hash="";var t=n.toString();-1===L.indexOf(t)&&(n.search="",t=n.toString());var r="GET"===e.request.method,o=-1!==_.indexOf(t),a=t;if(!o){var c=x(e.request);c&&(a=c,o=!0)}if(!o&&r&&C&&i(e.request))return void e.respondWith(m(fetch(e.request)));if(!o||!r)return void(n.origin!==location.origin&&-1!==navigator.userAgent.indexOf("Firefox/44.")&&e.respondWith(fetch(e.request)));var s=void 0;s="network-first"===S?g(e,t,a):v(e,t,a),C&&i(e.request)&&(s=m(s)),e.respondWith(s)}),self.addEventListener("message",function(e){var n=e.data;if(n)switch(n.action){case"skipWaiting":self.skipWaiting&&self.skipWaiting()}})}(__wpo,{loaders:{},cacheMaps:[]}),e.exports=t(1)},function(e,n){}]);
+function createCacheBustedRequest(url) {
+  let request = new Request(url, {cache: 'reload'});
+  // See https://fetch.spec.whatwg.org/#concept-request-mode
+  // This is not yet supported in Chrome as of M48, so we need to explicitly check to see
+  // if the cache: 'reload' option had any effect.
+  if ('cache' in request) {
+    return request;
+  }
+
+  // If {cache: 'reload'} didn't have any effect, append a cache-busting URL parameter instead.
+  let bustedUrl = new URL(url, self.location.href);
+  bustedUrl.search += (bustedUrl.search ? '&' : '') + 'cachebust=' + Date.now();
+  return new Request(bustedUrl);
+}
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    // We can't use cache.add() here, since we want OFFLINE_URL to be the cache key, but
+    // the actual URL we end up requesting might include a cache-busting parameter.
+    fetch(createCacheBustedRequest(OFFLINE_URL)).then(function(response) {
+      return caches.open(CURRENT_CACHES.offline).then(function(cache) {
+        return cache.put(OFFLINE_URL, response);
+      });
+    })
+  );
+});
+
+self.addEventListener('activate', event => {
+  // Delete all caches that aren't named in CURRENT_CACHES.
+  // While there is only one cache in this example, the same logic will handle the case where
+  // there are multiple versioned caches.
+  let expectedCacheNames = Object.keys(CURRENT_CACHES).map(function(key) {
+    return CURRENT_CACHES[key];
+  });
+
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (expectedCacheNames.indexOf(cacheName) === -1) {
+            // If this cache name isn't present in the array of "expected" cache names,
+            // then delete it.
+            console.log('Deleting out of date cache:', cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+self.addEventListener('fetch', event => {
+  // We only want to call event.respondWith() if this is a navigation request
+  // for an HTML page.
+  // request.mode of 'navigate' is unfortunately not supported in Chrome
+  // versions older than 49, so we need to include a less precise fallback,
+  // which checks for a GET request with an Accept: text/html header.
+  if (event.request.mode === 'navigate' ||
+      (event.request.method === 'GET' &&
+       event.request.headers.get('accept').includes('text/html'))) {
+    console.log('Handling fetch event for', event.request.url);
+    event.respondWith(
+      fetch(event.request).catch(error => {
+        // The catch is only triggered if fetch() throws an exception, which will most likely
+        // happen due to the server being unreachable.
+        // If fetch() returns a valid HTTP response with an response code in the 4xx or 5xx
+        // range, the catch() will NOT be called. If you need custom handling for 4xx or 5xx
+        // errors, see https://github.com/GoogleChrome/samples/tree/gh-pages/service-worker/fallback-response
+        console.log('Fetch failed; returning offline page instead.', error);
+        return caches.match(OFFLINE_URL);
+      })
+    );
+  }
+
+  // If our if() condition is false, then this fetch handler won't intercept the request.
+  // If there are any other fetch handlers registered, they will get a chance to call
+  // event.respondWith(). If no fetch handlers call event.respondWith(), the request will be
+  // handled by the browser as if there were no service worker involvement.
+});
